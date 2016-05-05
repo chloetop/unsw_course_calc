@@ -27,6 +27,6 @@ You can
 
 `startover`
 
-*Export your selection**
+**Export your selection**
 
 `export`
