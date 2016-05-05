@@ -1,3 +1,6 @@
+import time
+import stream
+
 class Selected_Course(list):
 
 	def __init__(self,database):
@@ -82,3 +85,71 @@ class Selected_Course(list):
 				return s
 		print("no such course called %s!"%course_id)
 		return 0
+
+	def remove_course(self):
+
+		if not len(self):
+			print("No course to remove")
+			return 1
+
+		print("Which course do you want to remove. Indicate Course_ID")
+		user_input = input(">")
+
+		course_id = user_input.upper()
+		
+		for i in range(len(self)):
+			if self[i].id == course_id:
+				self.pop(i)
+				print("%s removed!" %course_id)
+				break
+
+	def export(self):
+
+		if len(self):
+
+			file = open('courseSelection.txt', 'a')
+
+			s = "Course selected on "  + time.ctime() + ':\n\n'
+			file.write(s)
+
+			for i in self:
+				singleEntry = i.name + '\n'
+				file.write(singleEntry)
+
+			file.write('-' * 50 + '\n\n')
+
+			file.close()
+
+			print("Selection saved in courseSelection.txt")
+
+		else:
+
+			print("No course to export")
+		
+	def startover(self):
+
+		self = Selected_Course(self.database)
+
+
+	def check(self):
+		print("Which stream do you want to check upon?")
+		print("Choose among these options:")
+		print("ai", "bio",'dse', 'ds', 'ecs', 'geo', 'ntw')
+		user_input = input(">")
+		if "dse" == user_input:
+			stream.dse.req(self)
+		if "ai"  == user_input:
+			stream.ai.req(self)
+		if "bio" == user_input:
+			stream.bio.req(self)	
+		if "ds"  == user_input:
+			stream.ds.req(self)
+		if "ecs" == user_input:
+			stream.ecs.req(self)
+		if "geo" == user_input:
+			stream.geo.req(self)
+		if "ntw" == user_input:
+			stream.ntw.req(self)
+
+
+

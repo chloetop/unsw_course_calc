@@ -16,9 +16,13 @@ class Stream:
 		if "GSOE9820" not in temp_list:
 			print("GSOE9820: Engineering Project Management missing \n")
 
-		if course_list.course_stat()[1] < 9:
-			print("Not enough Level 0,1,2,3 courses")
-			print("%d courses are missing \n" % (9 - course_list.course_stat()[2]))
+		# if course_list.course_stat()[1] < 9:
+		# 	print("Not enough Level 0,1,2,3 courses")
+		# 	print("%d courses are missing \n" % (9 - course_list.course_stat()[2]))
+
+		if course_list.course_stat()[0] < 16:
+			print("Not enough courses. Overall 16 courses needed.")
+			print("%d courses selected, %d courses missing" %(course_list.course_stat()[0], 16 - course_list.course_stat()[0]) )
 
 		if course_list.course_stat()[2] < 6:
 			print("Not enough Advanced Disciplinary Knowledge Courses")
@@ -43,10 +47,10 @@ def dse_spec(course_list):
 	if (len(inter1) >= 2 and len(inter2) >= 2 and len(inter3) >= 1) or \
 	   (len(inter1) >= 1 and len(inter2) >= 2 and len(inter3) >= 2) or \
 	   (len(inter1) >= 2 and len(inter2) >= 1 and len(inter3) >= 2):
-		print("Stream pecialisations courses satisfied")
+		print("Stream specialisations courses satisfied")
 		return True
 	else:
-		print("Stream pecialisations courses unsatisfied")
+		print("Stream specialisations courses unsatisfied")
 		return False
 
 def ai_spec(course_list):
@@ -58,9 +62,9 @@ def ai_spec(course_list):
 	inter = set.intersection(set(cat), set(course_list))
 
 	if len(inter) < 3:
-		print("AI Stream pecialisations courses unsatisfied")
+		print("AI Stream specialisations courses unsatisfied")
 	else:
-		print("AI Stream pecialisations courses satisfied")
+		print("AI Stream specialisations courses satisfied")
 
 def bio_spec(course_list):
 
@@ -75,9 +79,9 @@ def bio_spec(course_list):
 		print("Missing %s for BIO" % "BINF9010")
 
 	if len(inter) < 3:
-		print("BIO Stream pecialisations courses unsatisfied")
+		print("BIO Stream specialisations courses unsatisfied")
 	else:
-		print("BIO Stream pecialisations courses satisfied")
+		print("BIO Stream specialisations courses satisfied")
 
 def ds_spec(course_list):
 
