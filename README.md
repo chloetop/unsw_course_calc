@@ -23,6 +23,10 @@ You can
 
 `check`
 
-**Export your selection**
+**Clean startover**
+
+`startover`
+
+*Export your selection**
 
 `export`
