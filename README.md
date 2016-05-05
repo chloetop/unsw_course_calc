@@ -8,16 +8,21 @@ a very miminal course helper. now only support MIT(master informaiton technology
 You can
 
 Add a Course.
-COMP4141
+
+`COMP4141`
 
 Remove a Course.
-remove
+
+`remove`
 
 Review your selection
-review
+
+`review`
 
 Check if you meet the requirements for a particular stream
-check
+
+`check`
+
 
 Export your selection
 export
