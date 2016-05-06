@@ -7,7 +7,7 @@ a very miminal course helper. now only support MIT(master informaiton technology
 
 You can
 
-**Add a Course.**
+**Add a course by entering a course ID.**
 
 `COMP4141`
 
