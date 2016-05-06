@@ -30,3 +30,7 @@ You can
 **Export your selection**
 
 `export`
+
+**Quit**
+
+`quit`
